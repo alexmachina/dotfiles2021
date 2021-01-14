@@ -1,3 +1,4 @@
+# O ESTADO DA ARTE DOS MEUS SCRIPTS NO UBUNTÂO WSL
 # bootstrap.sh
 - Adiciona o index.sh no `.bashrc`.
 - Faz o link do init.vim
