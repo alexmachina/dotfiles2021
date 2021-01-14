@@ -4,6 +4,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 INIT_VIM=~/.config/nvim/init.vim
+TMUX_CONF=~/.tmux.conf
 
 function linkDotfiles {
   # Link init.vim
@@ -14,14 +15,33 @@ function linkDotfiles {
   fi
 
   ln -s $DIR/init.vim ~/.config/nvim/init.vim
+
+  # Link .tmux.conf
+  echo "Linking .tmux.conf..."
+  if [ -f "$TMUX_CONF" ]; then
+    cp $TMUX_CONF ~/.tmux.conf.bkp
+    rm $TMUX_CONF
+  fi
+
+  ln -s $DIR/tmux.conf ~/.tmux.conf
+}
+
+function addSourceToRc {
+  local line="source ${DIR}/index.sh"
+  local isInFile=$(cat ~/.bashrc | grep -c "$line")
+  
+  echo "isInFile $isInFile"
+
+  if [ $isInFile -eq 0 ]; then
+    echo "sourcing index.sh in bashrc"
+    echo $LINE >> ~/.bashrc
+    source ~/.bashrc
+  else
+    echo "dotfiles already sourced!"
+  fi
 }
 
 linkDotfiles
-
-echo "adding dotfiles index.sh to bashrc"
-
-LINE="source ${DIR}/index.sh"
-echo $LINE >> ~/.bashrc
-source ~/.bashrc
+addSourceToRc
 
 echo "Bootstraping complete!"
