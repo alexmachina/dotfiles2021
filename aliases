@@ -1,2 +1,17 @@
 alias gs='adda'
 alias gf='git fetch'
+alias v="nvim"
+alias vim="nvim"
+alias t="tmux"
+alias tmuxcfg="nvim ~/.tmux.conf"
+alias src="source ~/.bashrc"
+alias bashcfg="nvim ~/.bashrc"
+alias vimcfg="nvim ~/.config/nvim/init.vim"
+alias y="yarn"
+alias gf="git fetch"
+alias gp="git pull origin develop"
+alias gc="git checkout"
+alias kubectl="kubectl.exe"
+alias kb="kubectl.exe"
+alias terminal="DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0 gnome-terminal &"
+alias s='src'

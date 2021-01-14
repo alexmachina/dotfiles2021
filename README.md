@@ -8,9 +8,12 @@
 ```
 
 # init.vim
+
 ```bash
   ln -s /home/alex/scripts/init.vim /home/alex/.config/nvim/init.vim
 ```
+
 ## TODO
 
-1. Salvar os alias em um arquivo que vindo da variavel de ambiente.
+1. Parametrizar arquivo de alias com variável de ambiente
+2. Dar source automatico nos .sh da pasta scripts
