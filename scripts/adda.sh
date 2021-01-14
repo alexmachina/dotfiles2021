@@ -2,6 +2,7 @@ function saveAlias {
     echo $1
     local ALIASES_PATH=~/scripts/aliases
     echo $1 >> $ALIASES_PATH
+    source $ALIASES_PATH
 }
 
 function adda {
