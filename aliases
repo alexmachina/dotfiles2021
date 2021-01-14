@@ -15,3 +15,6 @@ alias kubectl="kubectl.exe"
 alias kb="kubectl.exe"
 alias terminal="DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0 gnome-terminal &"
 alias s='src'
+alias cdvv='cd ~/viavarejo-catalogo-frontend/'
+alias gpm='git pull origin master'
+alias cds='cd ~/scripts/'
