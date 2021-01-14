@@ -8,9 +8,6 @@ Plug 'yegappan/mru'
 " Project-wide search
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Tests
-Plug 'vim-test/vim-test'
-
 " GIT integration
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -20,13 +17,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Design
-"Plug 'ryanoasis/vim-devicons'
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'mswift42/vim-themes'
-Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'wakatime/vim-wakatime'
+Plug 'tomasiser/vim-code-dark'
 
 " JSX JS TS TSX syntax highlighting
 Plug 'pangloss/vim-javascript'
@@ -41,7 +35,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'janko/vim-test'
 call plug#end()
 
-colorscheme alduin
+colorscheme codedark
 let maplocalleader = " "
 let mapleader = ","
 "let g:NERDTreeMinimalMenu = 1
