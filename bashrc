@@ -1,0 +1,1 @@
+source ~/scripts/index.sh

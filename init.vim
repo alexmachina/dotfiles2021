@@ -27,6 +27,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
+Plug 'ryanoasis/vim-devicons'
+Plug 'vwxyutarooo/nerdtree-devicons-syntax'
+
 "FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -38,10 +41,13 @@ call plug#end()
 colorscheme codedark
 let maplocalleader = " "
 let mapleader = ","
-"let g:NERDTreeMinimalMenu = 1
+let g:NERDTreeMinimalMenu = 1
 "let NERDTreeShowLineNumbers=1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let NERDTreeDirArrowExpandable = "\u00a0"
+let NERDTreeDirArrowCollapsible = "\u00a0"
+let NERDTreeMinimalUI=1
 
 autocmd FileType nerdtree setlocal relativenumber
 set relativenumber
@@ -63,6 +69,7 @@ syntax on
 " Highlight git gutters
 highlight GitGutterAdd ctermfg=46 ctermbg=none
 highlight GitGutterDelete ctermfg=9 ctermbg=none
+
 
 " keymap to show the current file in the tree.
 nnoremap <localleader>e :NERDTreeTabsFind<cr>
@@ -123,6 +130,7 @@ nnoremap <C-f> :Ag<cr>
 tnoremap <Esc> <C-\><C-n>
 
 "COC Stuff
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
 

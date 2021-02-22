@@ -9,6 +9,9 @@ source $DIR/scripts/nvm.sh
 source $DIR/scripts/adda.sh
 source $DIR/scripts/env.sh
 source $DIR/scripts/fzf.sh
+source $DIR/scripts/git-become.sh
+
 
 # Load aliases
 source $DIR/aliases
+
