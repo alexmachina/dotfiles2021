@@ -1,11 +1,21 @@
 #!/bin/bash
+# TODO: Change function names to snake case
+# TODO: 
 
 # Get my dotfiles folder directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 INIT_VIM=~/.config/nvim/init.vim
 TMUX_CONF=~/.tmux.conf
+GIT_CONFIG=~/.gitconfig
 
+# TODO: Create a helper function.
+# link_file source destiny
+# The three operations are similar, they:
+# 1. Check if file exist
+# 2. Create a backup file
+# 3. remove the old file
+# 4. create a link to dotfile
 function linkDotfiles {
   # Link init.vim
   echo "Linking init.vim..."
@@ -24,6 +34,15 @@ function linkDotfiles {
   fi
 
   ln -s $DIR/tmux.conf ~/.tmux.conf
+
+   # Link .gitconfig
+  echo "Linking .gitconfig..."
+  if [ -f "$GIT_CONFIG" ]; then
+    cp $GIT_CONFIG ~/.gitconfig.bkp
+    rm $GIT_CONFIG
+  fi
+
+  ln -s $DIR/gitconfig ~/.gitconfig
 }
 
 function addSourceToRc {
@@ -49,6 +68,7 @@ function installVimPlugins {
 
 function installBashIt {
   git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+
   ~/.bash_it/install.sh
 }
 

@@ -1,9 +1,0 @@
-export EDITOR="vim"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-export TERM=xterm-256color
-
-source "$BASH_IT"/bash_it.sh
-export HELLO=world
-source /home/alex/scripts/index.sh
