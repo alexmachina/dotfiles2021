@@ -1,5 +1,5 @@
 # Path to the bash it configuration
-export BASH_IT="/home/alex/.bash_it"
+export BASH_IT="/home/${USER}/.bash_it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.

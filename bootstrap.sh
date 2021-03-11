@@ -29,12 +29,11 @@ function linkDotfiles {
 function addSourceToRc {
   local line="source ${DIR}/index.sh"
   local isInFile=$(cat ~/.bashrc | grep -c "$line")
-  
-  echo "isInFile $isInFile"
+
 
   if [ $isInFile -eq 0 ]; then
     echo "sourcing index.sh in bashrc"
-    echo $LINE >> ~/.bashrc
+    echo $line >> ~/.bashrc
     source ~/.bashrc
   else
     echo "dotfiles already sourced!"
@@ -42,13 +41,20 @@ function addSourceToRc {
 }
 
 function installVimPlugins {
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
   nvim +PlugInstall +qall
+}
+
+function installBashIt {
+  git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+  ~/.bash_it/install.sh
 }
 
 linkDotfiles
 installVimPlugins
+installBashIt
 addSourceToRc
 
 echo "Bootstraping complete!"
